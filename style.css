@@ -43,10 +43,16 @@ body{
     border-color: coral;
     border-width: 2px;
     margin-right: 20px;
+    text-align: center;
 }
 
 #todoHinzufuegenInput,#hinzufuegenButton:focus{
     outline: none;
+}
+
+#hinzufuegenButton:hover{
+   background-color: crimson;
+   color: white;
 }
 
 #hinzufuegenButton{
@@ -56,7 +62,7 @@ body{
     border-style: solid;
     border-color: black;
     background-color: coral;
-    border-width: 2px;
+    border-width: 1px;
 }
 
 #hinzufuegenButton:hover{

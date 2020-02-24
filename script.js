@@ -8,20 +8,21 @@ todoHinzufuegen.addEventListener('submit', hinzufuegen)
 
 ul.addEventListener('mouseover', highlightItem);
 
-document.body.addEventListener('mouseover', unhighlightItem);
+document.body.addEventListener('click', unhighlightItem);
 
 function highlightItem(e){
-  // falls geklicktes Element Listenelement
-    if(e.target.nodeName == "INPUT"){
+  // falls geklicktes Element == Div
+    if(e.target.nodeName == "DIV"){
         for(let j = 0; j < e.target.parentNode.children.length; j++){
           e.target.parentNode.children[j].classList.remove('active');
+          console.log( e.target.parentNode.children[j]);
       }  
       e.target.classList.add('active');
     }
 }
 
 function unhighlightItem(e){
-  if(e.target.nodeName != "INPUT"){
+  if(!e.target.classList.contains('inputAndLabel')){
     var listenelemente = document.getElementById("todoItems").children;
     for(let k = 0; k < listenelemente.length; k++){
       listenelemente[k].classList.remove('active');
