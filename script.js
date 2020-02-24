@@ -29,11 +29,10 @@ function unhighlightItem(e){
   }
 }
 
-
-function hinzufuegen(){
+function hinzufuegen(value){
   const newItem = document.createElement("li");
   newItem.setAttribute('class', "todoItem");
-  newItem.innerHTML = "New Item " + newItemCounter.toString();
+  newItem.innerHTML = value;
   newItemCounter++;
   ul.appendChild(newItem);
 }
