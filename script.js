@@ -22,3 +22,5 @@ function hinzufuegen(){
   ul.innerHTML += "<li>Item" + newItemCounter + "</li>";
   newItemCounter++;
 }
+
+console.log("Hallo");
