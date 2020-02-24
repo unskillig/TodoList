@@ -1,7 +1,7 @@
 const todoItems = document.getElementsByClassName("todoItem");
 var ul = document.getElementById("todoItems");
 const ueberschrift = document.getElementById("ueberschrift");
-const todoHinzufuegen = document.getElementById("todoHinzufuegen");
+const todoHinzufuegen = document.getElementById("todoHinzufuegenInput");
 let newItemCounter = 5;
 
 todoHinzufuegen.addEventListener('submit', hinzufuegen)
@@ -30,6 +30,9 @@ function unhighlightItem(e){
 }
 
 function hinzufuegen(value){
+  const divItem = document.createElement("div");
+  divItem.setAttribute('class', "inputAndLabel");
+
   const newItem = document.createElement("input");
   newItem.setAttribute('class', "todoItem");
   newItem.setAttribute('type', "checkbox");
@@ -38,6 +41,9 @@ function hinzufuegen(value){
   const newLabel = document.createElement("label");
   newLabel.innerHTML = value;
   newItemCounter++;
-  ul.appendChild(newItem);
-  ul.appendChild(newLabel);
+
+  divItem.appendChild(newItem);
+  divItem.appendChild(newLabel);
+  ul.appendChild(divItem);
+
 }

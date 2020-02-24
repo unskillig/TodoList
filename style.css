@@ -2,7 +2,7 @@ body{
     font-family: "Poppins";
     display: grid;
     grid-template-columns: 20% 60% 20%;
-    grid-template-rows: 150px 150x 10em;
+    grid-template-rows: 150px 100px 10em;
     justify-content: center;
 }
 
@@ -17,7 +17,7 @@ body{
     display: flex;
     grid-column: 2;
     grid-row: 2;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 #itemContainer{
@@ -26,23 +26,26 @@ body{
 }
 
 #todoItems{
-display: flex;
-   flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .active{
     background-color: coral;
 }
 
-#todoHinzufuegen{
+#todoHinzufuegenInput{
     border-radius: 10px;
     height: 30px;
     width: 300px;
     text-decoration: none;
     border-style: solid;
+    border-color: coral;
+    border-width: 2px;
+    margin-right: 20px;
 }
 
-#todoHinzufuegen,#hinzufuegenButton:focus{
+#todoHinzufuegenInput,#hinzufuegenButton:focus{
     outline: none;
 }
 
@@ -53,8 +56,15 @@ display: flex;
     border-style: solid;
     border-color: black;
     background-color: coral;
+    border-width: 2px;
 }
 
 #hinzufuegenButton:hover{
     cursor: pointer;
 }
+
+::placeholder { 
+    color: black;
+    opacity: 0.6;
+    text-align: center;
+  }

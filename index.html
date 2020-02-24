@@ -14,21 +14,28 @@
     </div>
    
 <div id="hinzufuegenContainer">
-    <input id="todoHinzufuegen" type="text" placeholder="Todo hinzufügen"></input>
+    <input id="todoHinzufuegenInput" type="text" placeholder="Todo hinzufügen"></input>
     <button id="hinzufuegenButton" type="submit" value="Submit" onclick="hinzufuegen(todoHinzufuegen.value)">Hinzufügen</button>
 </div>
        
 <div id="itemContainer">
     <ul id="todoItems">
-        <input type="checkbox" id="item1" class="todoItem">
-        <label>Müll runterbringen</label>
-        <input type="checkbox" id="item2" class="todoItem">
-        <label>Ikea</label>
-        <input type="checkbox" id="item3" class="todoItem">
-        <label>PC defragmentieren</label>
-        <input type="checkbox" id="item4" class="todoItem">
-        <label>Sport</label>
-      
+        <div class="inputAndLabel">
+            <input type="checkbox" id="item1" class="todoItem">
+            <label>Müll runterbringen</label>
+        </div>
+        <div class="inputAndLabel">
+            <input type="checkbox" id="item2" class="todoItem">
+            <label>Ikea</label>
+        </div>
+        <div class="inputAndLabel">
+            <input type="checkbox" id="item3" class="todoItem">
+            <label>PC defragmentieren</label>
+        </div>
+        <div class="inputAndLabel">
+            <input type="checkbox" id="item4" class="todoItem">
+            <label>Sport</label>
+        </div>
     
     </ul>
 
