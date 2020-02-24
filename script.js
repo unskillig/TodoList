@@ -15,7 +15,7 @@ function highlightItem(e){
     if(e.target.nodeName == "DIV"){
         for(let j = 0; j < e.target.parentNode.children.length; j++){
           e.target.parentNode.children[j].classList.remove('active');
-          console.log( e.target.parentNode.children[j]);
+
       }  
       e.target.classList.add('active');
     }
@@ -31,20 +31,37 @@ function unhighlightItem(e){
 }
 
 function hinzufuegen(value){
-  const divItem = document.createElement("div");
-  divItem.setAttribute('class', "inputAndLabel");
 
-  const newItem = document.createElement("input");
-  newItem.setAttribute('class', "todoItem");
-  newItem.setAttribute('type', "checkbox");
-  newItem.setAttribute('id', "item" + newItemCounter)
+  if(value != ""){
+    const divItem = document.createElement("div");
+    divItem.setAttribute('class', "inputAndLabel");
+  
+    const newItem = document.createElement("input");
+    newItem.setAttribute('class', "todoItem");
+    newItem.setAttribute('type', "checkbox");
+    newItem.setAttribute('id', "item" + newItemCounter)
+  
+    const newLabel = document.createElement("label");
+    newLabel.innerHTML = value;
+    newItemCounter++;
+  
+    divItem.appendChild(newItem);
+    divItem.appendChild(newLabel);
+    ul.appendChild(divItem);
+  }
+  else{
+    alert("Bitte geben Sie ein Todo ein :)");
+  }
+ 
 
-  const newLabel = document.createElement("label");
-  newLabel.innerHTML = value;
-  newItemCounter++;
+}
 
-  divItem.appendChild(newItem);
-  divItem.appendChild(newLabel);
-  ul.appendChild(divItem);
-
+function changeStatus(e){
+  console.log("Clicked change status")
+  if(e.classList.contains('done')){
+    e.classList.remove('done');
+  }
+  else{
+    e.classList.add('done');
+  }
 }
