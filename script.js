@@ -4,7 +4,7 @@ const ueberschrift = document.getElementById("ueberschrift");
 const todoHinzufuegen = document.getElementById("todoHinzufuegen");
 let newItemCounter = 1;
 
-todoHinzufuegen.addEventListener('click', hinzufuegen)
+todoHinzufuegen.addEventListener('submit', hinzufuegen)
 
 ul.addEventListener('mouseover', highlightItem);
 
@@ -19,7 +19,6 @@ function highlightItem(e){
       e.target.classList.add('active');
     }
 }
-
 
 function unhighlightItem(e){
   if(e.target.nodeName != "LI"){

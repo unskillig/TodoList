@@ -1,9 +1,47 @@
 body{
     font-family: "Poppins";
     display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 150px 150x 10em;
+    justify-content: center;
 }
 
+#ueberschriftContainer{
+    display: flex;
+    justify-content: center;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#hinzufuegenContainer{
+    display: flex;
+    grid-column: 2;
+    grid-row: 2;
+    justify-content: space-around;
+}
+
+#itemContainer{
+    grid-column: 2;
+    grid-row: 3;
+}
 
 .active{
+    background-color: coral;
+}
+
+#todoHinzufuegen{
+    border-radius: 10px;
+    height: 30px;
+    width: 300px;
+    text-decoration: none;
+    border-style: solid;
+}
+
+#hinzufuegenButton{
+    border-radius:40px;
+    height: 35px;
+    width: 100px;
+    border-style: solid;
+  border-color: black;
     background-color: coral;
 }
