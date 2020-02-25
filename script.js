@@ -27,7 +27,6 @@ var todos = [
     }
 ]
 
-
 const todoItems = document.getElementsByClassName("todoItem");
 var ul = document.getElementById("todoItems");
 const ueberschrift = document.getElementById("ueberschrift");
@@ -69,14 +68,17 @@ function hinzufuegen(value){
     todos.push(newTodo);
 
     // neue HTML-Elemente für das entsprechende todo anlegen und in den Dom einfügen
+    // div für input und label hinzufügen
     const divItem = document.createElement("div");
     divItem.setAttribute('class', "inputAndLabel");
   
+    // checkbox hinzufügen
     const newItem = document.createElement("input");
     newItem.setAttribute('class', "todoItem");
     newItem.setAttribute('type', "checkbox");
     newItem.setAttribute('id', "item" + newItemCounter)
   
+    // label hinzufügen
     const newLabel = document.createElement("label");
     newLabel.innerHTML = value;
     newItemCounter++;
@@ -84,11 +86,14 @@ function hinzufuegen(value){
     divItem.appendChild(newItem);
     divItem.appendChild(newLabel);
     ul.appendChild(divItem);
+
+    document.getElementById("todoHinzufuegenInput").value = "";
   }
   else{
     alert("Bitte geben Sie ein Todo ein :)");
   }
 }
+
 
 function changeStatus(e){
   console.log("Clicked change status")
