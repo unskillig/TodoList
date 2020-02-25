@@ -134,14 +134,5 @@ function changeStatus(e){
     e.target.parentNode.classList.remove('done');
     console.log(todos[indexTodo].status);
   }
-
-/*
-  if(e.target.parentNode.classList.contains('done')){
-    e.parentNode.classList.remove('done');
-  }
-  else{
-    e.target.parentNode.classList.add('done');
-  }
-  */
   
 }
