@@ -39,6 +39,7 @@ ul.addEventListener('mouseover', highlightItem);
 
 document.body.addEventListener('click', unhighlightItem);
 
+// über den Parameter e kann man auf alle möglichen Informationen über das entsprechende Event zugreifen --> z.B. liefert e.target das Element, welches geklickt wurde
 function highlightItem(e){
   // falls geklicktes Element == Div
     if(e.target.nodeName == "DIV"){
@@ -71,12 +72,14 @@ function hinzufuegen(value){
     // div für input und label hinzufügen
     const divItem = document.createElement("div");
     divItem.setAttribute('class', "inputAndLabel");
+    divItem.addEventListener('onClick', changeStatus);
   
     // checkbox hinzufügen
     const newItem = document.createElement("input");
     newItem.setAttribute('class', "todoItem");
     newItem.setAttribute('type', "checkbox");
-    newItem.setAttribute('id', "item" + newItemCounter)
+    newItem.setAttribute('id', "item" + newItemCounter);
+    newItem.addEventListener('change', changeStatus);
   
     // label hinzufügen
     const newLabel = document.createElement("label");
@@ -94,13 +97,22 @@ function hinzufuegen(value){
   }
 }
 
-
 function changeStatus(e){
-  console.log("Clicked change status")
-  if(e.classList.contains('done')){
-    e.classList.remove('done');
+
+  if(e.target.checked){
+    e.target.parentNode.classList.add('done');
   }
   else{
-    e.classList.add('done');
+    e.target.parentNode.classList.remove('done');
   }
+
+/*
+  if(e.target.parentNode.classList.contains('done')){
+    e.parentNode.classList.remove('done');
+  }
+  else{
+    e.target.parentNode.classList.add('done');
+  }
+  */
+  
 }

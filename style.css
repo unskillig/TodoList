@@ -76,5 +76,5 @@ body{
   }
 
   .done{
-      text-decoration: transparent;
+    text-decoration: line-through;
   }
