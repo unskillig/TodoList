@@ -1,3 +1,33 @@
+function todo(id, titel, status){
+  this.id = id, 
+  this.titel = titel,
+  this.status = status;
+}
+
+var todos = [
+    {
+      id: 1,
+      titel: "Ikea",
+      status: false
+    },
+    {
+      id: 2,
+      titel: "JS lernen",
+      status: false
+    },
+    {
+      id: 3,
+      titel: "Sport",
+      status: false
+    },
+    {
+      id: 4,
+      titel: "Einkaufen",
+      status: false
+    }
+]
+
+
 const todoItems = document.getElementsByClassName("todoItem");
 var ul = document.getElementById("todoItems");
 const ueberschrift = document.getElementById("ueberschrift");
@@ -33,6 +63,12 @@ function unhighlightItem(e){
 function hinzufuegen(value){
 
   if(value != ""){
+
+    // neues Todo-Objekt anlegen und dem Array todos hinzufügen
+    var newTodo = new todo(newItemCounter, value, false);
+    todos.push(newTodo);
+
+    // neue HTML-Elemente für das entsprechende todo anlegen und in den Dom einfügen
     const divItem = document.createElement("div");
     divItem.setAttribute('class', "inputAndLabel");
   
@@ -52,8 +88,6 @@ function hinzufuegen(value){
   else{
     alert("Bitte geben Sie ein Todo ein :)");
   }
- 
-
 }
 
 function changeStatus(e){
