@@ -33,6 +33,32 @@ const ueberschrift = document.getElementById("ueberschrift");
 const todoHinzufuegen = document.getElementById("todoHinzufuegenInput");
 let newItemCounter = 5;
 
+// Bestehende Todos in den Dom einfügen
+
+todos.forEach(element => {
+    const divItem = document.createElement("div");
+    divItem.setAttribute('class', "inputAndLabel");
+    divItem.addEventListener('onClick', changeStatus);
+  
+    // checkbox hinzufügen
+    const newItem = document.createElement("input");
+    newItem.setAttribute('class', "todoItem");
+    newItem.setAttribute('type', "checkbox");
+    newItem.setAttribute('id', "item" + element.id);
+    newItem.addEventListener('change', changeStatus);
+  
+    // label hinzufügen
+    const newLabel = document.createElement("label");
+    newLabel.innerHTML = element.titel;
+    
+    divItem.appendChild(newItem);
+    divItem.appendChild(newLabel);
+    ul.appendChild(divItem);
+
+    document.getElementById("todoHinzufuegenInput").value = "";
+});
+   
+
 todoHinzufuegen.addEventListener('submit', hinzufuegen)
 
 ul.addEventListener('mouseover', highlightItem);
@@ -98,12 +124,15 @@ function hinzufuegen(value){
 }
 
 function changeStatus(e){
-
+  const indexTodo = parseInt(e.target.id.substring(4)) - 1;
+  todos[indexTodo].status = !todos[indexTodo].status;
   if(e.target.checked){
     e.target.parentNode.classList.add('done');
+    console.log(todos[indexTodo].status);
   }
   else{
     e.target.parentNode.classList.remove('done');
+    console.log(todos[indexTodo].status);
   }
 
 /*
